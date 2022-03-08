@@ -6,8 +6,20 @@ html{
     box-sizing: inherit;
 }
 
+body{
+    background-color: gray;
+}
+h1{
+    text-align: center;
+}
+
 #container{
-    max-width: 100%;
+    max-width: 50%;
+    max-height: 100px;
+    background-color: gray;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 
 }
 
