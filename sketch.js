@@ -17,7 +17,7 @@ function addDiv(x, theClassName){
     for (i=0; i<x; i++){
         let new_div = document.createElement("div");
         new_div.classList.add(`gridItem`);
-        new_div.setAttribute('style', 'flex-basis: 100%; border: 5px solid black; padding: 5px;');
+        new_div.setAttribute('style', 'flex-basis: 100%; border: 5px solid black; padding: 5px; padding-top: max(5px);');
         let theClass = document.querySelector(`${theClassName}`);
         theClass.append(new_div);
     }
@@ -25,8 +25,11 @@ function addDiv(x, theClassName){
 
 };
 
+let user_choice = 0;
 
-let user_choice = 24;
+squarePick = document.getElementById("pick");
+
+
 
 function buildBoard(squares){
     if (squares > 100){
@@ -63,4 +66,54 @@ clear.addEventListener("click", function(){
 
     })
 })
+
+
+
+
+squarePick.addEventListener("click", function(){
+    container.innerHTML="";
+    user_choice = squarePick.value;
+    buildBoard(user_choice);
+    let grids = document.querySelectorAll(".gridItem");
+    let mode = document.querySelector('input[name="mode"]');
+    mode.addEventListener("change", function(){
+        if (mode == "rain"){
+            grids.forEach(element => {
+                element.addEventListener("mouseenter", function(element){
+                    element.target.style.backgroundColor = "red";
+        
+                })
+        
+            })
+        
+        }
+        else{
+            grids.forEach(element => {
+                element.addEventListener("mouseenter", function(element){
+                    element.target.style.backgroundColor = "aqua";
+        
+                })
+        
+            })
+        
+        }
+
+});
+
+
+
     
+   
+    
+
+    let clear = document.getElementById("clearBoard");
+
+
+
+    clear.addEventListener("click", function(){
+        grids.forEach(element => {
+            element.style.backgroundColor = "";
+
+        })
+    })
+})
