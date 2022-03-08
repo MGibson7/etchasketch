@@ -75,12 +75,20 @@ squarePick.addEventListener("click", function(){
     user_choice = squarePick.value;
     buildBoard(user_choice);
     let grids = document.querySelectorAll(".gridItem");
-    let mode = document.querySelector('input[name="mode"]');
-    mode.addEventListener("change", function(){
-        if (mode == "rain"){
+    
+
+    let mode = document.querySelector('#mode');
+
+    mode.addEventListener("click", function(){
+        modePick = mode.textContent;
+        console.log(modePick)
+        if (modePick == "REGULAR"){
+            mode.textContent = ("RAINBOW");
             grids.forEach(element => {
                 element.addEventListener("mouseenter", function(element){
-                    element.target.style.backgroundColor = "red";
+                    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                    element.target.style.backgroundColor = `#${randomColor}`;
+            
         
                 })
         
@@ -88,9 +96,11 @@ squarePick.addEventListener("click", function(){
         
         }
         else{
+            mode.textContent = ("REGULAR");
             grids.forEach(element => {
                 element.addEventListener("mouseenter", function(element){
-                    element.target.style.backgroundColor = "aqua";
+                    element.target.style.backgroundColor = "white";
+            
         
                 })
         
