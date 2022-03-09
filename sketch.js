@@ -25,7 +25,7 @@ function addDiv(x, theClassName){
 
 };
 
-let user_choice = 0;
+let user_choice = 100;
 
 squarePick = document.getElementById("pick");
 
@@ -49,8 +49,8 @@ let grids = document.querySelectorAll(".gridItem");
 
 
 grids.forEach(element => {
-    element.addEventListener("mouseenter", function(element){
-        element.target.style.backgroundColor = "aqua";
+    element.addEventListener("mouseover", function(element){
+        element.target.style.backgroundColor = "white";
 
     })
 
@@ -66,6 +66,41 @@ clear.addEventListener("click", function(){
 
     })
 })
+
+let mode = document.querySelector('#mode');
+
+mode.addEventListener("click", function(){
+        modePick = mode.textContent;
+        console.log(modePick)
+        if (modePick == "REGULAR"){
+            mode.textContent = ("RAINBOW");
+            grids = document.querySelectorAll(".gridItem");
+            grids.forEach(element => {
+                element.addEventListener("mouseover", function(element){
+                    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                    element.target.style.backgroundColor = `#${randomColor}`;
+            
+        
+                })
+        
+            })
+        
+        }
+        else{
+            mode.textContent = ("REGULAR");
+            grids = document.querySelectorAll(".gridItem");
+            grids.forEach(element => {
+                element.addEventListener("mouseover", function(element){
+                    element.target.style.backgroundColor = "white";
+            
+        
+                })
+        
+            })
+        
+        }
+
+});
 
 
 
