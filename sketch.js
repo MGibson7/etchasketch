@@ -75,6 +75,14 @@ squarePick.addEventListener("click", function(){
     user_choice = squarePick.value;
     buildBoard(user_choice);
     let grids = document.querySelectorAll(".gridItem");
+    grids.forEach(element => {
+        element.addEventListener("mouseover", function(element){
+            element.target.style.backgroundColor = "white";
+    
+
+        })
+
+    })
     
 
     let mode = document.querySelector('#mode');
@@ -85,7 +93,7 @@ squarePick.addEventListener("click", function(){
         if (modePick == "REGULAR"){
             mode.textContent = ("RAINBOW");
             grids.forEach(element => {
-                element.addEventListener("mouseenter", function(element){
+                element.addEventListener("mouseover", function(element){
                     let randomColor = Math.floor(Math.random()*16777215).toString(16);
                     element.target.style.backgroundColor = `#${randomColor}`;
             
@@ -98,7 +106,7 @@ squarePick.addEventListener("click", function(){
         else{
             mode.textContent = ("REGULAR");
             grids.forEach(element => {
-                element.addEventListener("mouseenter", function(element){
+                element.addEventListener("mouseover", function(element){
                     element.target.style.backgroundColor = "white";
             
         
