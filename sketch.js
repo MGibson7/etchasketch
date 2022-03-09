@@ -109,6 +109,8 @@ squarePick.addEventListener("click", function(){
     container.innerHTML="";
     user_choice = squarePick.value;
     buildBoard(user_choice);
+    let mode = document.querySelector('#mode');
+    mode.textContent = ("REGULAR");
     let grids = document.querySelectorAll(".gridItem");
     grids.forEach(element => {
         element.addEventListener("mouseover", function(element){
