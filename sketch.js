@@ -4,7 +4,7 @@ function addContainerDiv(x){
     for (i=0; i<x; i++){
         let new_div = document.createElement("div");
         new_div.classList.add(`grid${i}`);
-        new_div.setAttribute('style', 'display: flex;'); 
+        new_div.setAttribute('style', 'display: flex; text-align: center;'); 
         classNames = document.getElementById("container")
         classNames.append(new_div);
     }
@@ -17,7 +17,7 @@ function addDiv(x, theClassName){
     for (i=0; i<x; i++){
         let new_div = document.createElement("div");
         new_div.classList.add(`gridItem`);
-        new_div.setAttribute('style', 'flex-basis: 100%; border: 5px solid black; padding: 5px; padding-top: max(5px);');
+        new_div.setAttribute('style', 'flex-basis: 100%; border: 1px solid black; padding: 1px; padding-top: max(5px);');
         let theClass = document.querySelector(`${theClassName}`);
         theClass.append(new_div);
     }

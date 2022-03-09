@@ -7,25 +7,38 @@ html{
 }
 
 body{
-    background-color: gray;
+    background-color: black;
 }
 h1{
     text-align: center;
+    color: white;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 #container{
     max-width: 100%;
-    max-height: 50px;
     background-color: gray;
     justify-content: center;
     align-items: center;
     align-content: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    border: 10px solid red;
 
+}
+
+#container *{
+    align-self: center;
+    flex-basis: 100%;
 }
 
 #userOptions{
     display: flex;
     max-width: 70%;
+    margin-left: 200px;
+    margin-right: 200px;
+    color: white;
 
 }
 
