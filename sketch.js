@@ -114,59 +114,16 @@ squarePick.addEventListener("click", function(){
         element.addEventListener("mouseover", function(element){
             element.target.style.backgroundColor = "white";
     
-
         })
-
+    
     })
     
+    
 
-    let mode = document.querySelector('#mode');
-
-    mode.addEventListener("click", function(){
-        modePick = mode.textContent;
-        console.log(modePick)
-        if (modePick == "REGULAR"){
-            mode.textContent = ("RAINBOW");
-            grids.forEach(element => {
-                element.addEventListener("mouseover", function(element){
-                    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-                    element.target.style.backgroundColor = `#${randomColor}`;
-            
-        
-                })
-        
-            })
-        
-        }
-        else{
-            mode.textContent = ("REGULAR");
-            grids.forEach(element => {
-                element.addEventListener("mouseover", function(element){
-                    element.target.style.backgroundColor = "white";
-            
-        
-                })
-        
-            })
-        
-        }
-
+    
 });
 
 
 
     
    
-    
-
-    let clear = document.getElementById("clearBoard");
-
-
-
-    clear.addEventListener("click", function(){
-        grids.forEach(element => {
-            element.style.backgroundColor = "";
-
-        })
-    })
-})
